@@ -1,27 +1,30 @@
-public class Rectangle {
+public class Rectangle extends Shape{
 
-    private Point topLeft;
+
+
     private int sideA , sideB;
 
+    public static int counter=0;
+
+    public int counterforobject=0;
+
+
     public Rectangle(Point topLeft, int sideA, int sideB) {
-        this.topLeft = topLeft;
+        super(topLeft);
         setSideA(sideA);
         setSideB(sideB);
+        counter++;
+        counterforobject++;
     }
 
     public Rectangle(Point topLeft, int sideA) {
-        this.topLeft = topLeft;
+        super(topLeft) ;
         setSideA(sideA);
         setSideB(sideA);
+        counter++;
+        counterforobject++;
     }
 
-    public Point getTopLeft() {
-        return topLeft;
-    }
-
-    public void setTopLeft(Point topLeft) {
-        this.topLeft = topLeft;
-    }
 
     public int getSideA() {
         return sideA;
@@ -49,10 +52,24 @@ public class Rectangle {
             this.sideB = sideB;
         }
     }
-    public int perimeter(){
+
+
+
+    public double perimeter(){
         return 2 * (sideA + sideB);
     }
-    public int area(){
+    public double area(){
         return sideA * sideB;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+
+                ", sideA=" + sideA +
+                ", sideB=" + sideB +
+                ", counterforobject=" + counterforobject +
+                '}';
     }
 }
